@@ -62,16 +62,21 @@ body {
 
 .button {
    color: #3761a8;
+   font-size: 1rem;
    font-weight: 600;
    background-color: #feca1b;
    border: 2px solid #3761a8;
    border-radius: 10px;
    padding: 3px;
+   min-width: 60px;
 }
 
 .screen {
    background-color: #feca1b;
    width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .footer {
@@ -83,3 +88,51 @@ body {
    justify-content: center;
 }
 
+
+.pokemon__card {
+   padding: 20px;
+   width: 500px;
+   height: 300px;
+   background-color: #fff;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.card__header {
+   display: flex;
+   justify-content: space-between;
+}
+.card__name {
+   font-size: 1.5rem;
+   font-weight: 800;
+   text-transform: capitalize;
+}
+
+.card__button {
+   display: flex;
+   gap: 30px;
+}
+
+.card__main {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 15px;
+}
+
+.card__image img{
+   width: 200px;
+   height: 200px;
+}
+
+.card__text {
+   color: #3761a8;
+   background-color: #feca1b;
+   padding: 15px;
+   border: 2px solid #3761a8;
+   border-radius: 10px;
+   font-style: italic;
+   text-align: center;
+   font-weight: 600;
+}
