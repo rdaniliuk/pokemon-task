@@ -1,4 +1,4 @@
-function renderTemplate () {
+function renderTemplate() {
   return `
       <div class="card__header">
       <div class="card__name">
@@ -10,7 +10,7 @@ function renderTemplate () {
       `;
 }
 
-function statTemplate (name, point) {
+function statTemplate(name, point) {
   return `
       <div class="stat__name ">
          <span>${name}</span>
@@ -22,19 +22,18 @@ function statTemplate (name, point) {
        `;
 }
 
-export function pokemonStatsRender (data) {
-  const screen = document.querySelector('.screen');
-  const statsCard = document.createElement('div');
-  statsCard.classList.add('pokemon__stats');
+export function pokemonStatsRender(data) {
+  const screen = document.querySelector(".screen");
+  const statsCard = document.createElement("div");
+  statsCard.classList.add("pokemon__stats");
   screen.append(statsCard);
   statsCard.innerHTML = renderTemplate();
-  const statsContainer = document.querySelector('.card__stats');
+  const statsContainer = document.querySelector(".card__stats");
   const stats = data.stats;
   stats.forEach((stat) => {
-    const statPoint = stat.base_stat;
-    const statName = stat.stat.name;
-    const statWrapper = document.createElement('div');
-    statWrapper.classList.add('stat__wrapper');
+    const [statPoint, statName] = [stat.base_stat, stat.stat.name];
+    const statWrapper = document.createElement("div");
+    statWrapper.classList.add("stat__wrapper");
     statWrapper.innerHTML = statTemplate(statName, statPoint);
     statsContainer.append(statWrapper);
   });

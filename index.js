@@ -1,4 +1,4 @@
-import { renderPokemonList } from './pokemonListRender.js';
+import { renderPokemonList } from "./pokemonListRender.js";
 
-const getAllPock = document.querySelector('#getPokemonList');
-getAllPock.addEventListener('click', renderPokemonList);
+const getAllPock = document.querySelector("#getPokemonList");
+getAllPock.addEventListener("click", renderPokemonList);
