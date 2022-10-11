@@ -1,6 +1,4 @@
-import PokemonAPI from "./PokemonAPI.js";
-
-function renderTemplate(name, imageURL, info) {
+function renderTemplate (name, imageURL, info) {
   return `
       <div class="pokemon__card">
          <div class="card__header">
@@ -24,13 +22,10 @@ function renderTemplate(name, imageURL, info) {
       `;
 }
 
-export async function pokemonCardRender(id) {
-  const pokemonAPI = new PokemonAPI();
-  const [data, info] = await pokemonAPI.getPok(id);
+export async function pokemonCardRender (data, info) {
   const name = data.name;
   const image = data.sprites.other.home.front_default;
   const screen = document.querySelector('.screen');
   screen.innerHTML = '';
   screen.innerHTML = renderTemplate(name, image, info);
 }
-
