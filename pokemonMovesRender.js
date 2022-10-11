@@ -35,7 +35,7 @@ function templateRender(
           <span>pp</span>
         </div>
         <div class="move__power">
-          <span>${movePower}</span>
+          <span>${movePower || 0}</span>
           <span>power</span>
         </div>
         <div class="move__accuracy">
@@ -47,6 +47,10 @@ function templateRender(
 }
 
 export async function pokemonMovesRender(data) {
+  const screen = document.querySelector(".screen");
+  const movesWrapper = document.createElement("div");
+  movesWrapper.classList.add("pokemon__moves");
+  screen.append(movesWrapper);
   let moves = data.moves;
   if (moves.length >= 4) {
     const learnedMoves = moves.filter((move) => {
@@ -64,10 +68,6 @@ export async function pokemonMovesRender(data) {
     movesLvl.push(move.version_group_details[0].level_learned_at);
   });
   const moveData = await pokemonAPI.getMove(movesLink);
-  const screen = document.querySelector(".screen");
-  const movesWrapper = document.createElement("div");
-  movesWrapper.classList.add("pokemon__moves");
-  screen.append(movesWrapper);
   moveData.forEach((move, index) => {
     const [
       moveClass,

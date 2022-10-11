@@ -1,5 +1,4 @@
 export default class PokAPI {
-
   constructor() {
     this.baseUrl = "https://pokeapi.co/api/v2/pokemon/";
     this.urlForInfo = "https://pokeapi.co/api/v2/pokemon-species/";
@@ -21,7 +20,9 @@ export default class PokAPI {
   }
 
   async getMove(links) {
-    const arrOfPromises = links.map(link => fetch(link).then((res) => res.json()))
+    const arrOfPromises = links.map((link) =>
+      fetch(link).then((res) => res.json())
+    );
     const response = await Promise.all(arrOfPromises);
     return response;
   }

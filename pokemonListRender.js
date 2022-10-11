@@ -24,7 +24,11 @@ export async function renderPokemonList() {
     pokemonListWrapper.append(pokemonWrapper);
   });
   const showPokemonButton = document.querySelector("#getPokemonList");
-  showPokemonButton.classList.add("hideButton");
+  const hiddenText = document.querySelector("#hidden__text");
+  const startText = document.querySelector("#start__text");
+  showPokemonButton.classList.add("hideContainer");
+  startText.classList.add("hideContainer");
+  hiddenText.classList.toggle("hideContainer");
   pokemonListWrapper.addEventListener("click", async (e) => {
     const targetButton = e.target;
     if (targetButton.closest(".button")) {

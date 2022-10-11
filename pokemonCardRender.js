@@ -29,14 +29,14 @@ export async function pokemonCardRender(data, info) {
   const types = data.types;
   const screen = document.querySelector(".screen");
   screen.innerHTML = "";
-  screen.innerHTML = renderTemplate(name, image, info );
-  const typesContainer = document.querySelector('.card__type');
+  screen.innerHTML = renderTemplate(name, image, info);
+  const typesContainer = document.querySelector(".card__type");
   types.forEach((type) => {
-   const typeContainer = document.createElement('div');
-   typeContainer.innerText = type.type.name;
-   typeContainer.classList.add('button');
-   typesContainer.append(typeContainer);
-  })
+    const typeContainer = document.createElement("div");
+    typeContainer.innerText = type.type.name;
+    typeContainer.classList.add("button");
+    typesContainer.append(typeContainer);
+  });
   pokemonStatsRender(data);
   pokemonMovesRender(data);
 }

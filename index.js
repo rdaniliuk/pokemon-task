@@ -1,4 +1,3 @@
-import { renderPokemonList } from "./pokemonListRender.js";
+import { startScreenRender } from "./startScreenRender.js";
 
-const getAllPock = document.querySelector("#getPokemonList");
-getAllPock.addEventListener("click", renderPokemonList);
+startScreenRender();
